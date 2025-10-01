@@ -191,6 +191,88 @@
             text-decoration: underline; 
         }
         
+        /* Developer Card - ECopy Style */
+        .developer-card {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            max-width: 280px;
+            transition: all 0.3s ease;
+        }
+        
+        .developer-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .developer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .developer-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .developer-details h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.2;
+        }
+        
+        .developer-details p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.2;
+        }
+        
+        .developer-links {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .developer-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.05);
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .developer-link:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: #333;
+            transform: scale(1.05);
+        }
+        
         /* Mobile Responsive - ETranslate Style */
         @media (max-width: 768px) {
             .navbar {
@@ -265,6 +347,27 @@
             }
             .feature p {
                 font-size: 1em;
+            }
+            
+            .developer-card {
+                bottom: 15px;
+                right: 15px;
+                max-width: 260px;
+                padding: 12px;
+            }
+            
+            .developer-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .developer-details h4 {
+                font-size: 14px;
+            }
+            
+            .developer-details p {
+                font-size: 12px;
             }
         }
     </style>
@@ -345,6 +448,20 @@
                 <a href="privacy.html">隐私政策</a> | 
                 <a href="mailto:dabufan@gmail.com">联系我们</a>
             </p>
+        </div>
+    </div>
+
+    <!-- Developer Card -->
+    <div class="developer-card">
+        <div class="developer-info">
+            <div class="developer-avatar">XL</div>
+            <div class="developer-details">
+                <h4>Xinq Lee</h4>
+                <p>独立开发者</p>
+            </div>
+        </div>
+        <div class="developer-links">
+            <a href="https://x.com/dabufan" class="developer-link" title="X 主页">𝕏</a>
         </div>
     </div>
 

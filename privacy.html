@@ -146,6 +146,67 @@
             color: #666; 
         }
         
+        /* Developer Card - ECopy Exact Style */
+        .developer-card {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            max-width: 200px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .developer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .developer-details h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #24292e;
+            line-height: 1.3;
+        }
+        
+        .developer-details p {
+            margin: 0;
+            font-size: 12px;
+            color: #586069;
+            line-height: 1.4;
+        }
+        
+        .floating-card-links {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .developer-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px 6px;
+            background: #f6f8fa;
+            border: 1px solid #d1d5da;
+            border-radius: 4px;
+            color: #0366d6;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+        
+        .developer-link:hover {
+            background: #e1e4e8;
+        }
+        
         /* Mobile Responsive - ETranslate Style */
         @media (max-width: 768px) {
             .navbar {
@@ -188,6 +249,13 @@
             .header {
                 margin-top: 79px;
                 padding: 80px 20px 40px;
+            }
+            
+            .developer-card {
+                bottom: 15px;
+                right: 15px;
+                max-width: 250px;
+                padding: 12px 15px;
             }
             
             h1 {
@@ -329,6 +397,20 @@
     <div class="footer">
         <p>&copy; 2024 EasyStickyNote. 保留所有权利。</p>
         <p><a href="index.html">返回首页</a> | <a href="support/">技术支持</a></p>
+    </div>
+
+    <!-- Developer Card -->
+    <div class="developer-card">
+        <div class="developer-info">
+            <div class="developer-details">
+                <h4>Xinq Lee</h4>
+                <p>独立开发者</p>
+            </div>
+        </div>
+        <div class="floating-card-links">
+            <a href="https://babydu.vercel.app/" class="developer-link">主页</a>
+            <a href="https://x.com/leexinq" class="developer-link">𝕏</a>
+        </div>
     </div>
 
     <script>

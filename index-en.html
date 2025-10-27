@@ -452,11 +452,14 @@
                     autoplay
                     loop
                     muted
+                    playsinline
                     preload="metadata"
                     poster=""
-                    title="Enote Product Demo">
+                    title="Enote Product Demo"
+                    onerror="console.log('Video error:', this.error)"
+                    onloadstart="console.log('Video loading started')"
+                    oncanplay="console.log('Video can play')">
                     <source src="Enote.mp4" type="video/mp4">
-                    <source src="Enote.mov" type="video/quicktime">
                     Your browser does not support video playback.
                 </video>
             </div>
@@ -543,7 +546,24 @@
             });
         });
 
-        // Smooth scrolling for anchor links
+        // Video autoplay fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('video');
+            if (video) {
+                // Try to play the video
+                video.play().catch(function(error) {
+                    console.log('Autoplay failed:', error);
+                    // Show play button or message
+                    video.controls = true;
+                });
+                
+                // Handle video errors
+                video.addEventListener('error', function(e) {
+                    console.log('Video error:', e);
+                    console.log('Error details:', video.error);
+                });
+            }
+        });
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频测试页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-container {
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+        .info {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>视频播放测试</h1>
+    
+    <div class="info">
+        <h3>测试信息：</h3>
+        <p>文件路径: Enote.mp4</p>
+        <p>文件大小: 3.1MB</p>
+        <p>格式: MP4 (H.264 + AAC)</p>
+        <p>分辨率: 1920x1080</p>
+    </div>
+
+    <div class="video-container">
+        <h3>测试1: 基础播放</h3>
+        <video controls>
+            <source src="Enote.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+    </div>
+
+    <div class="video-container">
+        <h3>测试2: 自动播放（静音）</h3>
+        <video controls autoplay muted loop playsinline>
+            <source src="Enote.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+    </div>
+
+    <div class="info">
+        <h3>调试信息：</h3>
+        <p>请打开浏览器开发者工具 (F12) 查看控制台输出</p>
+        <p>如果视频无法播放，控制台会显示错误信息</p>
+    </div>
+
+    <script>
+        // 检测视频支持
+        const video = document.createElement('video');
+        const canPlayMP4 = video.canPlayType('video/mp4');
+        console.log('MP4 支持:', canPlayMP4);
+        
+        // 监听所有视频元素
+        document.querySelectorAll('video').forEach((vid, index) => {
+            vid.addEventListener('loadstart', () => {
+                console.log(`视频 ${index + 1} 开始加载`);
+            });
+            
+            vid.addEventListener('canplay', () => {
+                console.log(`视频 ${index + 1} 可以播放`);
+            });
+            
+            vid.addEventListener('error', (e) => {
+                console.log(`视频 ${index + 1} 错误:`, vid.error);
+            });
+            
+            vid.addEventListener('play', () => {
+                console.log(`视频 ${index + 1} 开始播放`);
+            });
+        });
+    </script>
+</body>
+</html>

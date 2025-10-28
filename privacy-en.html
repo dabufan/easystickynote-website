@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enote - Privacy Policy</title>
     <meta name="description" content="Enote privacy policy, explaining how we collect, use and protect your information.">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -45,6 +47,19 @@
             font-weight: bold;
             color: #333;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-image: url('icon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 8px;
         }
         
         .nav-menu {
@@ -286,7 +301,10 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index-en.html" class="logo">Enote</a>
+            <a href="index-en.html" class="logo">
+                <div class="logo-icon"></div>
+                Enote
+            </a>
             <ul class="nav-menu">
                 <li><a href="index-en.html">Home</a></li>
                 <li><a href="support-en.html">Support</a></li>

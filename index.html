@@ -6,6 +6,8 @@
     <title>Enote - 简洁高效的桌面便签工具</title>
     <meta name="description" content="Enote是一款专为macOS设计的简洁高效桌面便签应用，支持27种语言，3天免费试用。">
     <meta name="keywords" content="便签,笔记,备忘录,桌面工具,生产力,macOS">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -43,6 +45,19 @@
             font-weight: bold;
             color: #333;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-image: url('icon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 8px;
         }
         
         .nav-menu {
@@ -413,7 +428,10 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Enote</a>
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                Enote
+            </a>
             <ul class="nav-menu">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="support/">技术支持</a></li>
@@ -435,8 +453,8 @@
     <div class="hero">
         <div class="container">
             <h1> Enote</h1>
-            <p>简洁高效的桌面便签工具</p>
-            <a href="https://apps.apple.com/app/easy-stickynote/id6753107770" class="btn">立即下载</a>
+            <p>简洁高效的桌面便签笔记应用</p>
+            <p style="font-size: 1.1em; opacity: 0.9; margin: 20px 0;">快速创建桌面便签与笔记，轻松记录灵感，便捷收集素材。<br>支持模板、图片与快捷键，全面提升工作效率与专注度。</p>
         </div>
     </div>
 
@@ -472,36 +490,43 @@
     <div class="container">
         <div class="features">
             <div class="feature">
-                <h3>⚡ 极速启动</h3>
-                <p>启动时间小于2秒，让您的想法记录更及时</p>
+                <h3>全局快捷键</h3>
+                <p>随时随地一键创建便签，快速记录你的灵感</p>
             </div>
             <div class="feature">
-                <h3>🎨 莫兰迪设计</h3>
-                <p>温和舒适的配色方案，减少视觉疲劳</p>
+                <h3>图片便签</h3>
+                <p>支持本地与网络图片拖拽、截图、粘贴，快速收集素材</p>
             </div>
             <div class="feature">
-                <h3>🌍 27种语言</h3>
-                <p>真正的全球化应用，支持多语言界面</p>
+                <h3>悬浮窗口</h3>
+                <p>一键置顶，让重要内容始终在眼前</p>
             </div>
             <div class="feature">
-                <h3>💎 高级功能</h3>
-                <p>无限制便签、云同步、数据导出等</p>
+                <h3>便签管理</h3>
+                <p>侧边栏优雅展开，点击即可打开便签</p>
             </div>
             <div class="feature">
-                <h3>🔒 数据安全</h3>
-                <p>本地存储保护隐私，高级版支持iCloud同步</p>
+                <h3>多彩设计</h3>
+                <p>主题色、窗口大小与透明度自由调节，可收缩为悬浮条</p>
             </div>
             <div class="feature">
-                <h3>🎯 智能功能</h3>
-                <p>全局快捷键、图片便签、丰富模板库</p>
+                <h3>深色模式</h3>
+                <p>完美适配系统外观，护眼更舒适</p>
             </div>
         </div>
     </div>
 
     <div class="cta">
         <div class="container">
-            <h2>开始您的3天免费试用</h2>
-            <p>无风险体验，随时可取消</p>
+            <h2>高效记录，灵感不停</h2>
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="demo2.png" alt="Enote 应用演示" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);">
+            </div>
+            <p>让你的桌面更整洁、思路更专注。非常适合注重效率和简洁的学生、职场人士、设计师与开发者。</p>
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="demo.png" alt="Enote 跨平台演示" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);">
+            </div>
+            <p>支持 Mac、iPhone、iPad 跨平台使用，一次购买全平台可用（通用购买）。</p>
             <a href="https://apps.apple.com/app/easy-stickynote/id6753107770" class="btn">立即下载</a>
         </div>
     </div>

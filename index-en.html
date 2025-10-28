@@ -6,6 +6,8 @@
     <title>Enote - Simple and Efficient Desktop Sticky Notes</title>
     <meta name="description" content="Enote is a simple and efficient desktop sticky note app designed for macOS, supporting 27 languages with a 3-day free trial.">
     <meta name="keywords" content="sticky notes,notes,memo,desktop tool,productivity,macOS">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -43,6 +45,19 @@
             font-weight: bold;
             color: #333;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-image: url('icon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 8px;
         }
         
         .nav-menu {
@@ -413,7 +428,10 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index-en.html" class="logo">Enote</a>
+            <a href="index-en.html" class="logo">
+                <div class="logo-icon"></div>
+                Enote
+            </a>
             <ul class="nav-menu">
                 <li><a href="index-en.html">Home</a></li>
                 <li><a href="support-en.html">Support</a></li>
@@ -436,7 +454,7 @@
         <div class="container">
             <h1> Enote</h1>
             <p>Simple and Efficient Desktop Sticky Notes</p>
-            <a href="https://apps.apple.com/app/easy-stickynote/id6753107770" class="btn">Download Now</a>
+            <p style="font-size: 1.1em; opacity: 0.9; margin: 20px 0;">Quickly create desktop sticky notes and memos, easily record inspiration, and conveniently collect materials.<br>Supports templates, images and shortcuts to comprehensively improve work efficiency and focus.</p>
         </div>
     </div>
 
@@ -472,36 +490,43 @@
     <div class="container">
         <div class="features">
             <div class="feature">
-                <h3>⚡ Lightning Fast</h3>
-                <p>Launch in under 2 seconds, capture your thoughts instantly</p>
+                <h3>Global Shortcuts</h3>
+                <p>Create sticky notes anytime, anywhere with one click, quickly record your inspiration</p>
             </div>
             <div class="feature">
-                <h3>🎨 Morandi Design</h3>
-                <p>Gentle and comfortable color scheme, reducing visual fatigue</p>
+                <h3>Image Notes</h3>
+                <p>Support local and web image drag & drop, screenshots, paste, quickly collect materials</p>
             </div>
             <div class="feature">
-                <h3>🌍 27 Languages</h3>
-                <p>Truly global app with multi-language interface support</p>
+                <h3>Floating Windows</h3>
+                <p>One-click pin to top, keep important content always in sight</p>
             </div>
             <div class="feature">
-                <h3>💎 Premium Features</h3>
-                <p>Unlimited notes, cloud sync, data export and more</p>
+                <h3>Note Management</h3>
+                <p>Elegant sidebar expansion, click to open notes</p>
             </div>
             <div class="feature">
-                <h3>🔒 Data Security</h3>
-                <p>Local storage protects privacy, premium version supports iCloud sync</p>
+                <h3>Colorful Design</h3>
+                <p>Theme colors, window size and transparency freely adjustable, can shrink to floating bar</p>
             </div>
             <div class="feature">
-                <h3>🎯 Smart Features</h3>
-                <p>Global shortcuts, image notes, rich template library</p>
+                <h3>Dark Mode</h3>
+                <p>Perfect adaptation to system appearance, more comfortable for eyes</p>
             </div>
         </div>
     </div>
 
     <div class="cta">
         <div class="container">
-            <h2>Start Your 3-Day Free Trial</h2>
-            <p>Risk-free experience, cancel anytime</p>
+            <h2>Efficient Recording, Continuous Inspiration</h2>
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="demo2.png" alt="Enote App Demo" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);">
+            </div>
+            <p>Make your desktop cleaner and your thoughts more focused. Perfect for students, professionals, designers and developers who value efficiency and simplicity.</p>
+            <div style="text-align: center; margin: 30px 0;">
+                <img src="demo.png" alt="Enote Cross-Platform Demo" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);">
+            </div>
+            <p>Supports Mac, iPhone, iPad cross-platform use, one purchase for all platforms (Universal Purchase).</p>
             <a href="https://apps.apple.com/app/easy-stickynote/id6753107770" class="btn">Download Now</a>
         </div>
     </div>

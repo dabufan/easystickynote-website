@@ -117,6 +117,57 @@
             text-align: center; 
             padding: 120px 20px 80px; 
             margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-decoration {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.3;
+            z-index: 1;
+            animation: slideInOut 4s ease-in-out infinite;
+        }
+        
+        .hero-decoration.left {
+            left: -100px;
+            animation-delay: 0s;
+        }
+        
+        .hero-decoration.right {
+            right: -100px;
+            animation-delay: 2s;
+        }
+        
+        .hero-decoration img {
+            width: 200px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes slideInOut {
+            0% {
+                transform: translateY(-50%) translateX(-50px);
+                opacity: 0;
+            }
+            25% {
+                transform: translateY(-50%) translateX(0);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translateY(-50%) translateX(0);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-50%) translateX(50px);
+                opacity: 0;
+            }
         }
         .container { 
             max-width: 1200px; 
@@ -421,6 +472,10 @@
             .video-container video {
                 height: 100%;
             }
+            
+            .hero-decoration {
+                display: none; /* Hide decorations on mobile */
+            }
         }
     </style>
 </head>
@@ -451,10 +506,22 @@
     </nav>
 
     <div class="hero">
+        <!-- Left decoration -->
+        <div class="hero-decoration left">
+            <img src="left.png" alt="Left decoration">
+        </div>
+        
+        <!-- Right decoration -->
+        <div class="hero-decoration right">
+            <img src="right.png" alt="Right decoration">
+        </div>
+        
         <div class="container">
-            <h1> Enote</h1>
-            <p>简洁高效的桌面便签笔记应用</p>
-            <p style="font-size: 1.1em; opacity: 0.9; margin: 20px 0;">快速创建桌面便签与笔记，轻松记录灵感，便捷收集素材。<br>支持模板、图片与快捷键，全面提升工作效率与专注度。</p>
+            <div class="hero-content">
+                <h1> Enote</h1>
+                <p>简洁高效的桌面便签笔记应用</p>
+                <p style="font-size: 1.1em; opacity: 0.9; margin: 20px 0;">快速创建桌面便签与笔记，轻松记录灵感，便捷收集素材。<br>支持模板、图片与快捷键，全面提升工作效率与专注度。</p>
+            </div>
         </div>
     </div>
 

@@ -175,6 +175,22 @@
             height: auto;
         }
         
+        .hero-language {
+            position: absolute;
+            top: 35%;
+            right: 15%;
+            transform: translateY(-50%);
+            z-index: 1;
+            max-width: 350px;
+            opacity: 1.0;
+        }
+        
+        .hero-language img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+        }
+        
         
         .hero-content {
             position: relative;
@@ -664,6 +680,10 @@
             .hero-dock {
                 display: none; /* Hide dock on mobile */
             }
+            
+            .hero-language {
+                display: none; /* Hide language decoration on mobile */
+            }
         }
     </style>
 </head>
@@ -707,6 +727,11 @@
         <!-- Dock decoration -->
         <div class="hero-dock">
             <img src="dock.png" alt="Dock decoration">
+        </div>
+        
+        <!-- Language decoration -->
+        <div class="hero-language">
+            <img src="en.png" alt="English decoration">
         </div>
         
         <div class="container">

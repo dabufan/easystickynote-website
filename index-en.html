@@ -133,12 +133,20 @@
         
         .hero-decoration.left {
             left: -300px;
-            animation: slideInOutLeft 8s ease-in-out infinite 2s;
+            transition: left 0.5s ease-out;
         }
         
         .hero-decoration.right {
             right: -300px;
-            animation: slideInOut 8s ease-in-out infinite;
+            transition: right 0.5s ease-out;
+        }
+        
+        .hero-decoration.left.show {
+            left: 0;
+        }
+        
+        .hero-decoration.right.show {
+            right: 0;
         }
         
         .hero-decoration img {
@@ -154,7 +162,12 @@
             z-index: 1;
             max-width: 600px;
             opacity: 0;
-            animation: slideUpFromBottom 2s ease-out 2s forwards;
+            transition: bottom 0.5s ease-out, opacity 0.5s ease-out;
+        }
+        
+        .hero-dock.show {
+            bottom: 0;
+            opacity: 0.8;
         }
         
         .hero-dock img {
@@ -162,16 +175,6 @@
             height: auto;
         }
         
-        @keyframes slideUpFromBottom {
-            from {
-                bottom: -100px;
-                opacity: 0;
-            }
-            to {
-                bottom: 0;
-                opacity: 0.8;
-            }
-        }
         
         .hero-content {
             position: relative;
@@ -844,6 +847,48 @@
     </div>
 
     <script>
+        // Hero decoration hover effects
+        const hero = document.querySelector('.hero');
+        const leftDecoration = document.querySelector('.hero-decoration.left');
+        const rightDecoration = document.querySelector('.hero-decoration.right');
+        const dockDecoration = document.querySelector('.hero-dock');
+        
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const width = rect.width;
+            const height = rect.height;
+            
+            // Left edge detection (within 100px of left edge)
+            if (x < 100) {
+                leftDecoration.classList.add('show');
+            } else {
+                leftDecoration.classList.remove('show');
+            }
+            
+            // Right edge detection (within 100px of right edge)
+            if (x > width - 100) {
+                rightDecoration.classList.add('show');
+            } else {
+                rightDecoration.classList.remove('show');
+            }
+            
+            // Bottom edge detection (within 100px of bottom edge)
+            if (y > height - 100) {
+                dockDecoration.classList.add('show');
+            } else {
+                dockDecoration.classList.remove('show');
+            }
+        });
+        
+        // Hide all decorations when mouse leaves hero area
+        hero.addEventListener('mouseleave', () => {
+            leftDecoration.classList.remove('show');
+            rightDecoration.classList.remove('show');
+            dockDecoration.classList.remove('show');
+        });
+        
         // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');

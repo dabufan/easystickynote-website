@@ -252,16 +252,116 @@
             padding: 0 20px;
         }
         .feature { 
-            text-align: center; 
-            padding: 30px; 
+            text-align: left; 
+            padding: 0;
             border-radius: 12px;
-            background: #f8f9fa;
             transition: transform 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            min-height: 240px;
+        }
+        
+        .feature:nth-child(1) {
+            background: rgb(251, 250, 247);
+            border: 1px solid rgba(217, 204, 179, 0.3);
+        }
+        
+        .feature:nth-child(2) {
+            background: rgb(247, 250, 247);
+            border: 1px solid rgba(191, 204, 179, 0.3);
+        }
+        
+        .feature:nth-child(3) {
+            background: rgb(246, 249, 252);
+            border: 1px solid rgba(184, 199, 224, 0.3);
+        }
+        
+        .feature:nth-child(4) {
+            background: rgb(251, 246, 249);
+            border: 1px solid rgba(217, 184, 199, 0.3);
+        }
+        
+        .feature:nth-child(5) {
+            background: rgb(249, 246, 252);
+            border: 1px solid rgba(199, 184, 224, 0.3);
+        }
+        
+        .feature:nth-child(6) {
+            background: rgb(251, 247, 247);
+            border: 1px solid rgba(219, 191, 179, 0.3);
         }
         .feature:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-header {
+            padding: 8px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 32px;
+        }
+        
+        .feature:nth-child(1) .feature-header {
+            background: rgb(217, 204, 179);
+        }
+        
+        .feature:nth-child(2) .feature-header {
+            background: rgb(191, 204, 179);
+        }
+        
+        .feature:nth-child(3) .feature-header {
+            background: rgb(184, 199, 224);
+        }
+        
+        .feature:nth-child(4) .feature-header {
+            background: rgb(217, 184, 199);
+        }
+        
+        .feature:nth-child(5) .feature-header {
+            background: rgb(199, 184, 224);
+        }
+        
+        .feature:nth-child(6) .feature-header {
+            background: rgb(219, 191, 179);
+        }
+        
+        
+        
+        .feature-content {
+            padding: 24px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .feature:nth-child(1) .feature-content {
+            background: rgb(251, 250, 247);
+        }
+        
+        .feature:nth-child(2) .feature-content {
+            background: rgb(247, 250, 247);
+        }
+        
+        .feature:nth-child(3) .feature-content {
+            background: rgb(246, 249, 252);
+        }
+        
+        .feature:nth-child(4) .feature-content {
+            background: rgb(251, 246, 249);
+        }
+        
+        .feature:nth-child(5) .feature-content {
+            background: rgb(249, 246, 252);
+        }
+        
+        .feature:nth-child(6) .feature-content {
+            background: rgb(251, 247, 247);
         }
         .feature h3 { 
             font-size: 1.5em; 
@@ -442,13 +542,20 @@
                 font-size: 1em; 
             }
             .feature {
-                padding: 20px;
+                min-height: 220px;
+            }
+            .feature-content {
+                padding: 20px 15px;
             }
             .feature h3 {
                 font-size: 1.3em;
             }
             .feature p {
                 font-size: 1em;
+            }
+            .feature-header {
+                padding: 6px 12px;
+                height: 28px;
             }
             
             .developer-card {
@@ -607,28 +714,52 @@
     <div class="container">
         <div class="features">
             <div class="feature">
-                <h3>全局快捷键</h3>
-                <p>随时随地一键创建便签，快速记录你的灵感</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>全局快捷键</h3>
+                    <p>随时随地一键创建便签，快速记录你的灵感</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>图片便签</h3>
-                <p>支持本地与网络图片拖拽、截图、粘贴，快速收集素材</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>图片便签</h3>
+                    <p>支持本地与网络图片拖拽、截图、粘贴，快速收集素材</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>悬浮窗口</h3>
-                <p>一键置顶，让重要内容始终在眼前</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>悬浮窗口</h3>
+                    <p>一键置顶，让重要内容始终在眼前</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>便签管理</h3>
-                <p>侧边栏优雅展开，点击即可打开便签</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>便签管理</h3>
+                    <p>侧边栏优雅展开，点击即可打开便签</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>多彩设计</h3>
-                <p>主题色、窗口大小与透明度自由调节，可收缩为悬浮条</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>多彩设计</h3>
+                    <p>主题色、窗口大小与透明度自由调节，可收缩为悬浮条</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>深色模式</h3>
-                <p>完美适配系统外观，护眼更舒适</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>深色模式</h3>
+                    <p>完美适配系统外观，护眼更舒适</p>
+                </div>
             </div>
         </div>
     </div>

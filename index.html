@@ -146,6 +146,21 @@
             height: auto;
         }
         
+        .hero-dock {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            max-width: 600px;
+            opacity: 0.8;
+        }
+        
+        .hero-dock img {
+            width: 100%;
+            height: auto;
+        }
+        
         .hero-content {
             position: relative;
             z-index: 2;
@@ -338,30 +353,33 @@
             flex-direction: column;
             justify-content: center;
             position: relative;
+            margin: 0;
+            height: 100%;
+            box-sizing: border-box;
         }
         
         .feature:nth-child(1) .feature-content {
-            background: rgb(251, 250, 247);
+            background: rgb(240, 235, 220);
         }
         
         .feature:nth-child(2) .feature-content {
-            background: rgb(247, 250, 247);
+            background: rgb(230, 240, 220);
         }
         
         .feature:nth-child(3) .feature-content {
-            background: rgb(246, 249, 252);
+            background: rgb(220, 235, 245);
         }
         
         .feature:nth-child(4) .feature-content {
-            background: rgb(251, 246, 249);
+            background: rgb(240, 220, 230);
         }
         
         .feature:nth-child(5) .feature-content {
-            background: rgb(249, 246, 252);
+            background: rgb(230, 220, 245);
         }
         
         .feature:nth-child(6) .feature-content {
-            background: rgb(251, 247, 247);
+            background: rgb(240, 230, 220);
         }
         .feature h3 { 
             font-size: 1.5em; 
@@ -665,6 +683,11 @@
         <!-- Right decoration -->
         <div class="hero-decoration right">
             <img src="right.png" alt="Right decoration">
+        </div>
+        
+        <!-- Dock decoration -->
+        <div class="hero-dock">
+            <img src="dock.png" alt="Dock decoration">
         </div>
         
         <div class="container">

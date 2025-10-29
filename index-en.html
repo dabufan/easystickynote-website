@@ -146,6 +146,21 @@
             height: auto;
         }
         
+        .hero-dock {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            max-width: 600px;
+            opacity: 0.8;
+        }
+        
+        .hero-dock img {
+            width: 100%;
+            height: auto;
+        }
+        
         .hero-content {
             position: relative;
             z-index: 2;
@@ -252,16 +267,119 @@
             padding: 0 20px;
         }
         .feature { 
-            text-align: center; 
-            padding: 30px; 
+            text-align: left; 
+            padding: 0;
             border-radius: 12px;
-            background: #f8f9fa;
             transition: transform 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            min-height: 240px;
+        }
+        
+        .feature:nth-child(1) {
+            background: rgb(251, 250, 247);
+            border: 1px solid rgba(217, 204, 179, 0.3);
+        }
+        
+        .feature:nth-child(2) {
+            background: rgb(247, 250, 247);
+            border: 1px solid rgba(191, 204, 179, 0.3);
+        }
+        
+        .feature:nth-child(3) {
+            background: rgb(246, 249, 252);
+            border: 1px solid rgba(184, 199, 224, 0.3);
+        }
+        
+        .feature:nth-child(4) {
+            background: rgb(251, 246, 249);
+            border: 1px solid rgba(217, 184, 199, 0.3);
+        }
+        
+        .feature:nth-child(5) {
+            background: rgb(249, 246, 252);
+            border: 1px solid rgba(199, 184, 224, 0.3);
+        }
+        
+        .feature:nth-child(6) {
+            background: rgb(251, 247, 247);
+            border: 1px solid rgba(219, 191, 179, 0.3);
         }
         .feature:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-header {
+            padding: 8px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 32px;
+        }
+        
+        .feature:nth-child(1) .feature-header {
+            background: rgb(217, 204, 179);
+        }
+        
+        .feature:nth-child(2) .feature-header {
+            background: rgb(191, 204, 179);
+        }
+        
+        .feature:nth-child(3) .feature-header {
+            background: rgb(184, 199, 224);
+        }
+        
+        .feature:nth-child(4) .feature-header {
+            background: rgb(217, 184, 199);
+        }
+        
+        .feature:nth-child(5) .feature-header {
+            background: rgb(199, 184, 224);
+        }
+        
+        .feature:nth-child(6) .feature-header {
+            background: rgb(219, 191, 179);
+        }
+        
+        
+        
+        .feature-content {
+            padding: 24px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            margin: 0;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        
+        .feature:nth-child(1) .feature-content {
+            background: rgb(240, 235, 220);
+        }
+        
+        .feature:nth-child(2) .feature-content {
+            background: rgb(230, 240, 220);
+        }
+        
+        .feature:nth-child(3) .feature-content {
+            background: rgb(220, 235, 245);
+        }
+        
+        .feature:nth-child(4) .feature-content {
+            background: rgb(240, 220, 230);
+        }
+        
+        .feature:nth-child(5) .feature-content {
+            background: rgb(230, 220, 245);
+        }
+        
+        .feature:nth-child(6) .feature-content {
+            background: rgb(240, 230, 220);
         }
         .feature h3 { 
             font-size: 1.5em; 
@@ -442,7 +560,14 @@
                 font-size: 1em; 
             }
             .feature {
-                padding: 20px;
+                min-height: 220px;
+            }
+            .feature-content {
+                padding: 20px 15px;
+            }
+            .feature-header {
+                padding: 6px 12px;
+                height: 28px;
             }
             .feature h3 {
                 font-size: 1.3em;
@@ -560,6 +685,11 @@
             <img src="right.png" alt="Right decoration">
         </div>
         
+        <!-- Dock decoration -->
+        <div class="hero-dock">
+            <img src="dock.png" alt="Dock decoration">
+        </div>
+        
         <div class="container">
             <div class="hero-content">
                 <h1> Enote</h1>
@@ -607,28 +737,52 @@
     <div class="container">
         <div class="features">
             <div class="feature">
-                <h3>Global Shortcuts</h3>
-                <p>Create sticky notes anytime, anywhere with one click, quickly record your inspiration</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>Global Shortcuts</h3>
+                    <p>Create sticky notes anytime, anywhere with one click, quickly record your inspiration</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>Image Notes</h3>
-                <p>Support local and web image drag & drop, screenshots, paste, quickly collect materials</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>Image Notes</h3>
+                    <p>Support local and web image drag & drop, screenshots, paste, quickly collect materials</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>Floating Windows</h3>
-                <p>One-click pin to top, keep important content always in sight</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>Floating Windows</h3>
+                    <p>One-click pin to top, keep important content always in sight</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>Note Management</h3>
-                <p>Elegant sidebar expansion, click to open notes</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>Note Management</h3>
+                    <p>Elegant sidebar expansion, click to open notes</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>Colorful Design</h3>
-                <p>Theme colors, window size and transparency freely adjustable, can shrink to floating bar</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>Colorful Design</h3>
+                    <p>Theme colors, window size and transparency freely adjustable, can shrink to floating bar</p>
+                </div>
             </div>
             <div class="feature">
-                <h3>Dark Mode</h3>
-                <p>Perfect adaptation to system appearance, more comfortable for eyes</p>
+                <div class="feature-header">
+                </div>
+                <div class="feature-content">
+                    <h3>Dark Mode</h3>
+                    <p>Perfect adaptation to system appearance, more comfortable for eyes</p>
+                </div>
             </div>
         </div>
     </div>
